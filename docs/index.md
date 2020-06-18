@@ -7,12 +7,12 @@ In a study on the art and science of goal setting done by Dr. Gail Matthews, a p
 professor at the Dominican University in California, she found that you become 42% more likely to 
 achieve your goals and dreams just by writing them down on a regular basis. Creating a check list 
 with three to five essential tasks to complete every day is what we call a "Power List". Any progress is
- a step in the right direction, and "Power List" will help you track your journey to reaching 
+ a step in the right direction, and "Power List" will help track your journey to reaching 
 those goals. 
 
 The functionalities of the app include a check list, a notepad, a file uploader and a media library. 
-A check list is essentially what we call the "power list". The notepad is for writing down
-your goals and having a place to save them. The file uploader is used for uploading photos of 
+A check list is essentially what we call the "power list". Writing down your goals and having a 
+place to save them is what the notepad. The file uploader is used for uploading photos of 
 whatever it is that you are working towards. These photos will go in your media library which 
 is what will display as your personal vision board.
 
