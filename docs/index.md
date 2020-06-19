@@ -42,4 +42,11 @@ project I am working on.
 
 ### Design documentation
 
-- [wireframe diagram](wireframe.md)
+- [Wireframe Diagram](wireframe.md)
+- [ERD Diagram](erd.md)
+
+### Device-based Services
+
+* Google Drive
+> Google Drive is where the photos will be uploaded to and stored. 
+> A reference could be found [here](https://developers.google.com/drive/api/v2/reference/files/insert)
