@@ -47,6 +47,13 @@ project I am working on.
 
 ### Device-based Services
 
+* Google Sign In
+> Google Sign In will allow you to sign into your account that holds all of your lists and ideas in 
+>a cloud. A reference to Google Sign In can be found [here](https://developers.google.com/identity/sign-in/web/sign-in).
 * Google Drive
 > Google Drive is where the photos will be uploaded to and stored. 
-> A reference could be found [here](https://developers.google.com/drive/api/v2/reference/files/insert)
+> A reference could be found [here](https://developers.google.com/drive/api/v2/reference/files/insert).
+* Google Cloud Tasks API
+> This API allows for a place to write and save tasks. Reference [here](https://cloud.google.com/tasks/docs/reference/rest).
+(Currently looking for something similar to Google Keep)
+
