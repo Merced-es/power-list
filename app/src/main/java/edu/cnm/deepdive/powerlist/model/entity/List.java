@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
+import edu.cnm.deepdive.powerlist.model.pojo.ListType;
 
 @Entity(
+    indices = @Index(value = "name", unique = true),
     foreignKeys = @ForeignKey(
         entity = Goal.class,
         parentColumns = "goal_id",
@@ -14,26 +17,34 @@ import androidx.room.PrimaryKey;
         onDelete = ForeignKey.SET_NULL
     )
 )
-
 public class List {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "list_id")
-    private long id;
+    private long listId;
 
-    @ColumnInfo(name = "list_id", index = true)
-    private Long listId;
+    private String name;
 
-    @NonNull
-    @ColumnInfo(collate = ColumnInfo.NOCASE)
-    private String text = "";
+    @ColumnInfo(name = "goal_id", index = true)
+    private Long goalId;
 
-    public long getId() {
-        return id;
+    @ColumnInfo(index = true)
+    private ListType type;
+
+    public long getListId() {
+        return listId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setListId(long listId) {
+        this.listId = listId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Long getGoalId() {
@@ -44,19 +55,11 @@ public class List {
         this.goalId = goalId;
     }
 
-    @NonNull
-    public String getText() {
-        return text;
+    public ListType getType() {
+        return type;
     }
 
-    public void setText(@NonNull String text) {
-        this.text = text;
+    public void setType(ListType type) {
+        this.type = type;
     }
-
-    @NonNull
-    @Override
-    public String toString() {
-        return text;
-    }
-
 }

@@ -1,39 +1,69 @@
 package edu.cnm.deepdive.powerlist.model.entity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
+import java.util.Date;
+
 
 @Entity(
     indices = @Index(value = "name", unique = true)
 )
-    public class Goal {
+public class Goal {
+
 
   @PrimaryKey(autoGenerate = true)
-  @ColumnInfo(name = "goal_id")
-  private long id;
-
-  @ColumnInfo(name = "source_id", index = true)
-  private Long goalId;
+  @ColumnInfo
+  private long goalId;
 
   @NonNull
   @ColumnInfo(collate = ColumnInfo.NOCASE)
-  private String text = "";
-
-  public long getId() { return id; }
-
-  public void setId(long id) { this.id = id; }
+  private String name;
 
   @NonNull
-  public String getText() { return text; }
+  @ColumnInfo(index = true)
+  private Date start;
 
-  public void setText(@NonNull String text) { this.text = text; }
+  @ColumnInfo(index = true)
+  private Date end;
+
+  public long getGoalId() {
+    return goalId;
+  }
+
+  public void setGoalId(long goalId) {
+    this.goalId = goalId;
+  }
 
   @NonNull
-  @Override
-  public String toString() { return text; }
+  public String getName() {
+    return name;
+  }
 
+  public void setName(@NonNull String name) {
+    this.name = name;
+  }
+
+  @NonNull
+  public Date getStart() {
+    return start;
+  }
+
+  public void setStart(@NonNull Date start) {
+    this.start = start;
+  }
+
+  public Date getEnd() {
+    return end;
+  }
+
+  public void setEnd(Date end) {
+    this.end = end;
+  }
 }
+
+

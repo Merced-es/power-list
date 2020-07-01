@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
+import java.util.Date;
 
 @Entity(
+    indices = @Index(value = "name", unique = true),
     foreignKeys = @ForeignKey(
         entity = List.class,
         parentColumns = "list_id",
@@ -19,45 +22,27 @@ public class Item {
 
   @PrimaryKey
   @ColumnInfo(name = "item_id")
-  private long id;
+  private long itemId;
 
-  @ColumnInfo(name = "item_id", index = true)
-  private Long itemId;
+  @ColumnInfo(index = true)
+  private Long listId;
 
   @NonNull
   @ColumnInfo(collate = ColumnInfo.NOCASE)
-  private String text = "";
+  private String name;
 
-  public long getId() {
-    return id;
-  }
+  @ColumnInfo()
+  private Date completed;
 
-  public void setId(long id) {
-    this.id = id;
-  }
+  @ColumnInfo(index = true, collate = ColumnInfo.NOCASE)
+  private String description;
 
-  public Long getListId() {
-    return listId;
-  }
+  @ColumnInfo(name = "media_uri")
+  private String mediaUri;
 
-  public void setListId(Long ListId) {
-    this.listId = listId;
-  }
+  @ColumnInfo(index = true)
+  private int sequence;
 
-  @NonNull
-  public String getText() {
-    return text;
-  }
 
-  public void setText(@NonNull String text) {
-    this.text = text;
-  }
-
-  @NonNull
-  @Override
-  public String toString() {
-    return text;
-  }
-}
 
 }
