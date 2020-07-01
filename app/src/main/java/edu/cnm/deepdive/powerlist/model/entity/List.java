@@ -36,12 +36,12 @@ public class List {
         this.id = id;
     }
 
-    public Long getSourceId() {
+    public Long getGoalId() {
         return goalId;
     }
 
-    public void setSourceId(Long sourceId) {
-        this.goalId = sourceId;
+    public void setGoalId(Long goalId) {
+        this.goalId = goalId;
     }
 
     @NonNull

@@ -16,6 +16,9 @@ import androidx.room.PrimaryKey;
   @ColumnInfo(name = "goal_id")
   private long id;
 
+  @ColumnInfo(name = "source_id", index = true)
+  private Long goalId;
+
   @NonNull
   @ColumnInfo(collate = ColumnInfo.NOCASE)
   private String text = "";
