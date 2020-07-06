@@ -1,28 +1,26 @@
 package edu.cnm.deepdive.powerlist.model.entity;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 import java.util.Date;
 
 
 @Entity(
-    indices = @Index(value = "name", unique = true)
+    indices = @Index(value = "title", unique = true)
 )
 public class Goal {
 
 
   @PrimaryKey(autoGenerate = true)
-  @ColumnInfo
+  @ColumnInfo(name = "goal_id")
   private long goalId;
 
   @NonNull
   @ColumnInfo(collate = ColumnInfo.NOCASE)
-  private String name;
+  private String title;
 
   @NonNull
   @ColumnInfo(index = true)
@@ -40,12 +38,12 @@ public class Goal {
   }
 
   @NonNull
-  public String getName() {
-    return name;
+  public String getTitle() {
+    return title;
   }
 
-  public void setName(@NonNull String name) {
-    this.name = name;
+  public void setTitle(@NonNull String title) {
+    this.title = title;
   }
 
   @NonNull

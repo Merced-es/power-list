@@ -16,7 +16,7 @@ public class ItemRepository {
   public QuoteRepository(Context context) {
     this.context = context;
     database = ListDatabase.getInstance();
-    GoalDao = database.getGoalDao();
+    ItemDao = database.getGoalDao();
     ItemDao = database.getQuoteDao();
   }
 

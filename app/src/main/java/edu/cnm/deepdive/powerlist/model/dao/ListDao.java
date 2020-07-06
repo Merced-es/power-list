@@ -30,10 +30,10 @@ public interface ListDao {
   @Delete
   Single<Integer> delete(List... lists);
 
-  @Query("SELECT * FROM List ORDER BY name")
+  @Query("SELECT * FROM List ORDER BY listName")
   LiveData<List<List>> selectAll();
 
-  @Query("SELECT * FROM List ORDER BY name")
+  @Query("SELECT * FROM List ORDER BY listName")
   LiveData<List<ListWithGoals>> selectAllWithGoals();
 
   @Transaction

@@ -1,6 +1,5 @@
 package edu.cnm.deepdive.powerlist.model.entity;
 
-import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
@@ -9,7 +8,7 @@ import androidx.room.PrimaryKey;
 import edu.cnm.deepdive.powerlist.model.pojo.ListType;
 
 @Entity(
-    indices = @Index(value = "name", unique = true),
+    indices = @Index(value = "list_name", unique = true),
     foreignKeys = @ForeignKey(
         entity = Goal.class,
         parentColumns = "goal_id",
@@ -23,7 +22,7 @@ public class List {
     @ColumnInfo(name = "list_id")
     private long listId;
 
-    private String name;
+    private String listName;
 
     @ColumnInfo(name = "goal_id", index = true)
     private Long goalId;
@@ -39,12 +38,12 @@ public class List {
         this.listId = listId;
     }
 
-    public String getName() {
-        return name;
+    public String getListName() {
+        return listName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setListName(String listName) {
+        this.listName = listName;
     }
 
     public Long getGoalId() {

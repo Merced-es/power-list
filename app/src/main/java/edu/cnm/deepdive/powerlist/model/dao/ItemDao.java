@@ -9,6 +9,7 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.powerlist.model.entity.Item;
+import edu.cnm.deepdive.powerlist.model.pojo.ItemWithGoals;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;

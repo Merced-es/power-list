@@ -9,6 +9,8 @@ import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.powerlist.model.entity.Goal;
+import edu.cnm.deepdive.powerlist.model.pojo.GoalWithItems;
+import edu.cnm.deepdive.powerlist.model.pojo.GoalwithLists;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.Collections;
@@ -32,21 +34,13 @@ public interface GoalDao {
   @Delete
   Single<Integer> delete(Goal... goals);
 
-  @Query("SELECT * FROM Goal ORDER BY name")
+  @Query("SELECT * FROM Goal ORDER BY title")
   LiveData<List<Goal>> selectAll();
 
-  @Query("SELECT * FROM Goal WHERE item_id = :itemId")
-  Single<Goal> selectByItemId(long itemId);
+  @Query("SELECT * FROM Goal ORDER BY title")
+  LiveData<List<GoalwithLists>> selectByListName();
 
-  @Query("SELECT * FROM Goal WHERE list_id = :listId")
-  Single<List<Goal>> selectByListId(long listId);
+  @Query("SELECT * FROM Goal ORDER BY title")
+  LiveData<List<GoalWithItems>> selectByItemID();
 
-  @Query("SELECT * FROM Goal WHERE ")
-  Single<GoalwithLists> selectById(long goalId);
-
-  @Query("SELECT * FROM Goal ORDER BY name")
-  LiveData<List<GoalWithItems>> selectAll();
-
-  @Query("SELECT * FROM Goal WHERE goal_id = :goalId")
-  Single<GoalwithLists> selectById(long goalId);
 }
