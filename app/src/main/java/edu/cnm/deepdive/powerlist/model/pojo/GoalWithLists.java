@@ -5,7 +5,7 @@ import edu.cnm.deepdive.powerlist.model.entity.Goal;
 import edu.cnm.deepdive.powerlist.model.entity.Item;
 import edu.cnm.deepdive.powerlist.model.entity.List;
 
-public class GoalwithLists extends Goal {
+public class GoalWithLists extends Goal {
 
   @Relation(entity = List.class, entityColumn = "List_id", parentColumn = "item_id")
   private Item item;

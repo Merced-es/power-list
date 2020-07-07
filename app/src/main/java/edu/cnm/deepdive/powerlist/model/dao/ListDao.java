@@ -8,6 +8,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
+import edu.cnm.deepdive.powerlist.model.pojo.ListWithGoal;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -34,11 +35,6 @@ public interface ListDao {
   LiveData<List<List>> selectAll();
 
   @Query("SELECT * FROM List ORDER BY listName")
-  LiveData<List<ListWithGoals>> selectAllWithGoals();
-
-  @Transaction
-  @Query("SELECT * FROM List WHERE list_id = :listId")
-  Single<ListWithGoals> selectById(long listId);
-
+  LiveData<List<ListWithGoal>> selectAllWithGoals();
 
 }

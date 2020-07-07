@@ -5,14 +5,21 @@ import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import edu.cnm.deepdive.powerlist.model.dao.GoalDao;
 import edu.cnm.deepdive.powerlist.model.dao.ItemDao;
+import edu.cnm.deepdive.powerlist.model.dao.ListDao;
 import edu.cnm.deepdive.powerlist.model.entity.Goal;
 import edu.cnm.deepdive.powerlist.model.entity.Item;
+import edu.cnm.deepdive.powerlist.model.pojo.GoalWithLists;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
 
 public class GoalRepository {
+
+  private final ListDatabase database;
+  private final GoalDao goalDao;
+  private final ListDao listDao;
+  private final ItemDao itemDao;
 
   public GoalRepository(Context context) {
     this.context = context;
@@ -22,7 +29,7 @@ public class GoalRepository {
   }
 
   public LiveData<List<GoalWithLists>> getAll() {
-    return Dao.selectAll();
+    return goalDao.selectAll();
   }
 
   public Single<GoalWithLists> get(long id) {

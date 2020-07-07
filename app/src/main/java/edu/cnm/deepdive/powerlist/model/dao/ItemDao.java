@@ -35,11 +35,11 @@ public interface ItemDao {
   @Query("SELECT * FROM Item ORDER BY name")
   LiveData<List<Item>> selectAll();
 
-  @Query("SELECT * FROM Item ORDER BY name")
-  LiveData<List<ItemWithGoals>> selectAllWithGoals();
+  @Query("SELECT * FROM Item WHERE item_id = :goalId")
+  LiveData<List<ItemWithGoals>> selectAllByTitle(long goalId);
 
-  @Query("SELECT * FROM Item WHERE item_id = :itemId")
-  Single<Item> selectById(long itemId);
+  @Query("SELECT * FROM Item WHERE name = name")
+  Single<Item> selectByItemName (long name);
 
 
 }
