@@ -8,7 +8,9 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Transaction;
 import androidx.room.Update;
+import edu.cnm.deepdive.powerlist.model.entity.Item;
 import edu.cnm.deepdive.powerlist.model.pojo.ListWithGoal;
+import edu.cnm.deepdive.powerlist.model.pojo.ListWithItems;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -31,10 +33,10 @@ public interface ListDao {
   @Delete
   Single<Integer> delete(List... lists);
 
-  @Query("SELECT * FROM List ORDER BY listName")
-  LiveData<List<List>> selectAll();
+  @Query("SELECT * FROM Item WHERE list_id = :listId")
+  Single<edu.cnm.deepdive.powerlist.model.entity.List> selectById(long listId);
 
   @Query("SELECT * FROM List ORDER BY listName")
-  LiveData<List<ListWithGoal>> selectAllWithGoals();
+  LiveData<List<ListWithItems>> selectAll();
 
 }

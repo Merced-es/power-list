@@ -30,6 +30,8 @@ public class List {
     @ColumnInfo(index = true)
     private ListType type;
 
+
+
     public long getListId() {
         return listId;
     }

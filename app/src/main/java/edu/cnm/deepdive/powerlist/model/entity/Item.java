@@ -43,6 +43,55 @@ public class Item {
   @ColumnInfo(index = true)
   private int sequence;
 
+  public long getItemId() {
+    return itemId;
+  }
 
+  public void setItemId(long itemId) {
+    this.itemId = itemId;
+  }
 
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@NonNull String name) {
+    this.name = name;
+  }
+
+  public Date getCompleted() {
+    return completed;
+  }
+
+  public void setCompleted(Date completed) {
+    this.completed = completed;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public String getMediaUri() {
+    return mediaUri;
+  }
+
+  public void setMediaUri(String mediaUri) {
+    this.mediaUri = mediaUri;
+  }
+
+  public int getSequence() {
+    return sequence;
+  }
+
+  public void setSequence(int sequence) {
+    this.sequence = sequence;
+  }
+
+  public Long getListId() {
+    return listId;
+  }
 }

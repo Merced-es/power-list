@@ -2,10 +2,11 @@ package edu.cnm.deepdive.powerlist.service;
 
 import android.content.Context;
 import androidx.lifecycle.LiveData;
-import androidx.room.Dao;
 import edu.cnm.deepdive.powerlist.model.dao.GoalDao;
 import edu.cnm.deepdive.powerlist.model.dao.ItemDao;
+import edu.cnm.deepdive.powerlist.model.dao.ListDao;
 import edu.cnm.deepdive.powerlist.model.entity.Item;
+import edu.cnm.deepdive.powerlist.model.pojo.ItemWithLists;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
@@ -13,39 +14,46 @@ import java.util.List;
 
 public class ItemRepository {
 
-  public QuoteRepository(Context context) {
+  private final ListDatabase database;
+  private final GoalDao goalDao;
+  private final ListDao listDao;
+  private final ItemDao itemDao;
+  private final Context context;
+
+  public ItemRepository(Context context) {
     this.context = context;
     database = ListDatabase.getInstance();
-    ItemDao = database.getGoalDao();
-    ItemDao = database.getQuoteDao();
+    goalDao = database.getGoalDao();
+    listDao = database.getListDao();
+    itemDao = database.getItemDao();
   }
 
-  public LiveData<List<ItemWithGoals>> getAll() {
+  public LiveData<List<ItemWithLists>> getAll() {
     return ItemDao.selectAll();
   }
 
-  public Single<ItemWithGoals> get(long id) {
+  public Single<ItemWithLists> get(long id) {
     return ItemDao.selectById(id)
         .subscribeOn(Schedulers.io());
   }
 
   public Completable save(Item item) {
-    if (item.getId() == 0) {
-      return Completable.fromSingle(ItemDao.insert(item))
+    if (item.getItemId() == 0) {
+      return Completable.fromSingle(itemDao.insert(item))
           .subscribeOn(Schedulers.io());
     } else {
-      return Completable.fromSingle(ItemDao.update(item))
+      return Completable.fromSingle(itemDao.update(item))
           .subscribeOn(Schedulers.io());
 
     }
   }
 
   public Completable delete(Item item) {
-    if (item.getId() == 0) {
+    if (item.getItemId() == 0) {
       return Completable.fromAction(() -> {})
           .subscribeOn(Schedulers.io());
     } else {
-      return Completable.fromSingle(ItemDao.delete(item))
+      return Completable.fromSingle(itemDao.delete(item))
           .subscribeOn(Schedulers.io());
     }
   }

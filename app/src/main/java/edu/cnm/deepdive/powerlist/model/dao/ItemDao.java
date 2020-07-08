@@ -6,10 +6,9 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
-import androidx.room.Transaction;
 import androidx.room.Update;
 import edu.cnm.deepdive.powerlist.model.entity.Item;
-import edu.cnm.deepdive.powerlist.model.pojo.ItemWithGoals;
+import edu.cnm.deepdive.powerlist.model.pojo.ItemWithLists;
 import io.reactivex.Single;
 import java.util.Collection;
 import java.util.List;
@@ -33,13 +32,10 @@ public interface ItemDao {
   Single<Integer> delete(Item... items);
 
   @Query("SELECT * FROM Item ORDER BY name")
-  LiveData<List<Item>> selectAll();
+  LiveData<List<ItemWithLists>> selectAll();
 
-  @Query("SELECT * FROM Item WHERE item_id = :goalId")
-  LiveData<List<ItemWithGoals>> selectAllByTitle(long goalId);
-
-  @Query("SELECT * FROM Item WHERE name = name")
-  Single<Item> selectByItemName (long name);
+  @Query("SELECT * FROM Item WHERE item_id = :itemId")
+  Single<Item> selectById(long itemId);
 
 
 }

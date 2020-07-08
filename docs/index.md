@@ -15,14 +15,12 @@ is what displays as your personal vision board.
 
 >* Check List/notepad
 >* File uploader
->* Media library
 
 ### Intended Users
 
 A college student with a part-time job and involved in extra-curricular activities.
-   > As a busy college student, I tend to forget about stuff that I need to do throughout the day, 
-so I need an app that will allow me to check off the most important things I need
-to get done before I go to sleep.
+   > As a busy college student, I need an app that will allow me to check off the most important things I need
+to get done each daybefore I go to sleep.
 
 Someone who wants to lose 15 lbs by Thanksgiving.
    > As someone who wants to lose some weight by Thanksgiving, I am looking for an app that will 
