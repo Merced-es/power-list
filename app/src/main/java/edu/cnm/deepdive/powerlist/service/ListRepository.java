@@ -43,7 +43,7 @@ public class ListRepository {
       return Completable.fromSingle(itemDao.insert((Collection<Item>) list))
           .subscribeOn(Schedulers.io());
     } else {
-      return Completable.fromSingle(itemDao.update(list)
+      return Completable.fromSingle(itemDao.update(list))
           .subscribeOn(Schedulers.io());
     }
   }
@@ -53,7 +53,7 @@ public class ListRepository {
       return Completable.fromAction(() -> {})
           .subscribeOn(Schedulers.io());
     } else {
-      return Completable.fromSingle(listDao.delete(list)
+      return Completable.fromSingle(listDao.delete(list))
           .subscribeOn(Schedulers.io());
     }
   }

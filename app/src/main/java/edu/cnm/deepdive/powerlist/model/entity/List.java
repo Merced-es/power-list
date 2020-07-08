@@ -61,4 +61,5 @@ public class List {
     public void setType(ListType type) {
         this.type = type;
     }
+
 }

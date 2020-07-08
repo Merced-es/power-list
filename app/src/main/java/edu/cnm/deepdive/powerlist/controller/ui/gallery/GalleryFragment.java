@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import edu.cnm.deepdive.powerlist.controller.R;
+import edu.cnm.deepdive.powerlist.R;
 
 public class GalleryFragment extends Fragment {
 

@@ -31,9 +31,9 @@ public interface ListDao {
   Single<Integer> update(List... lists);
 
   @Delete
-  Single<Integer> delete(List... lists);
+  Single<Integer> delete(edu.cnm.deepdive.powerlist.model.entity.List lists);
 
-  @Query("SELECT * FROM Item WHERE list_id = :listId")
+  @Query("SELECT * FROM List WHERE list_id = :listId")
   Single<edu.cnm.deepdive.powerlist.model.entity.List> selectById(long listId);
 
   @Query("SELECT * FROM List ORDER BY listName")
