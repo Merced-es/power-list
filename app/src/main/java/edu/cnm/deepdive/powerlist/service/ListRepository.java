@@ -5,12 +5,12 @@ import androidx.lifecycle.LiveData;
 import edu.cnm.deepdive.powerlist.model.dao.GoalDao;
 import edu.cnm.deepdive.powerlist.model.dao.ItemDao;
 import edu.cnm.deepdive.powerlist.model.dao.ListDao;
-import edu.cnm.deepdive.powerlist.model.entity.Goal;
-import edu.cnm.deepdive.powerlist.model.pojo.ListWithGoal;
+import edu.cnm.deepdive.powerlist.model.entity.Item;
 import edu.cnm.deepdive.powerlist.model.pojo.ListWithItems;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
+import java.util.Collection;
 import java.util.List;
 
 public class ListRepository {
@@ -29,32 +29,31 @@ public class ListRepository {
     itemDao = database.getItemDao();
   }
 
-  public Single<List> get(long id) {
+  public Single<edu.cnm.deepdive.powerlist.model.entity.List> get(long id) {
     return listDao.selectById(id)
         .subscribeOn(Schedulers.io());
   }
 
   public LiveData<List<ListWithItems>> getAll() {
-    return ListDao.selectAll();
+    return listDao.selectAll();
   }
 
-  public Completable save(List list) {
-    if (list.getListId == 0) {
-      return Completable.fromSingle(listDao.insert(list))
+  public Completable save(edu.cnm.deepdive.powerlist.model.entity.List list) {
+    if (list.getListId() == 0) {
+      return Completable.fromSingle(itemDao.insert((Collection<Item>) list))
           .subscribeOn(Schedulers.io());
     } else {
-      return Completable.fromSingle(listDao.update(list))
+      return Completable.fromSingle(itemDao.update(list)
           .subscribeOn(Schedulers.io());
-
     }
   }
 
-  public Completable delete(List list) {
+  public Completable delete(edu.cnm.deepdive.powerlist.model.entity.List list) {
     if (list.getListId() == 0) {
       return Completable.fromAction(() -> {})
           .subscribeOn(Schedulers.io());
     } else {
-      return Completable.fromSingle(listDao.delete(list))
+      return Completable.fromSingle(listDao.delete(list)
           .subscribeOn(Schedulers.io());
     }
   }

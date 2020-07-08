@@ -32,9 +32,7 @@ public class List {
 
 
 
-    public long getListId() {
-        return listId;
-    }
+    public Long getListId() { return listId; }
 
     public void setListId(long listId) {
         this.listId = listId;

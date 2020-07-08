@@ -28,13 +28,12 @@ keep track of my weight loss goal and document a list of what I need to do to ge
 
 A mother who is planning a birthday party for her son.
    > As a mother who wants to throw her son a fishing birthday party next month, 
-I need an app that will allow me to save all of my party ideas in one place and break down the 
-planning for me, so I am not so overwhelmed and trying to buy everything the day before.
+I need to save all of my party ideas in one place, so I am not so overwhelmed and trying to buy everything the day before.
 
 An interior designer with a collection of ideas.
    > As an interior designer, I have a million and one ideas for the visions my clients have
 for their homes, and I need a check list for my "To-Do's" each day and vision board for each
-project I am working on.
+project I am working on, so I complete my projects on time.
 
 
 
@@ -48,10 +47,4 @@ project I am working on.
 * Google Sign In
 > Google Sign In will allow you to sign into your account that holds all of your lists and ideas in 
 >a cloud. A reference to Google Sign In can be found [here](https://developers.google.com/identity/sign-in/web/sign-in).
-* Google Drive
-> Google Drive is where the photos will be uploaded to and stored. 
-> A reference could be found [here](https://developers.google.com/drive/api/v2/reference/files/insert).
-* Google Cloud Tasks API
-> This API allows for a place to write and save tasks. Reference [here](https://cloud.google.com/tasks/docs/reference/rest).
-(Currently looking for something similar to Google Keep)
 

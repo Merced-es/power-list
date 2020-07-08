@@ -29,15 +29,15 @@ public class ItemRepository {
   }
 
   public LiveData<List<ItemWithLists>> getAll() {
-    return ItemDao.selectAll();
+    return itemDao.selectAll();
   }
 
-  public Single<ItemWithLists> get(long id) {
-    return ItemDao.selectById(id)
+  public Single<Item> get(long id) {
+    return itemDao.selectById(id)
         .subscribeOn(Schedulers.io());
   }
 
-  public Completable save(Item item) {
+  public Completable save(edu.cnm.deepdive.powerlist.model.entity.Item item) {
     if (item.getItemId() == 0) {
       return Completable.fromSingle(itemDao.insert(item))
           .subscribeOn(Schedulers.io());

@@ -26,7 +26,7 @@ public interface ItemDao {
   Single<List<Long>> insert(Collection<Item> items);
 
   @Update
-  Single<Integer> update(Item... items);
+  Single<Integer> update(edu.cnm.deepdive.powerlist.model.entity.List items);
 
   @Delete
   Single<Integer> delete(Item... items);
