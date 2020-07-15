@@ -11,7 +11,7 @@ import java.util.Date;
 @Entity(
     indices = @Index(value = "name", unique = true),
     foreignKeys = @ForeignKey(
-        entity = List.class,
+        entity = TaskList.class,
         parentColumns = "list_id",
         childColumns = "list_id",
         onDelete = ForeignKey.SET_NULL
@@ -43,12 +43,19 @@ public class Item {
   @ColumnInfo(index = true)
   private int sequence;
 
+  public Item() {
+  }
+
   public long getItemId() {
     return itemId;
   }
 
   public void setItemId(long itemId) {
     this.itemId = itemId;
+  }
+
+  public void setListId(Long listId) {
+    this.listId = listId;
   }
 
   public String getName() {

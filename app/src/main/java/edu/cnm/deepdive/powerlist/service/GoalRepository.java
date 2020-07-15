@@ -6,9 +6,8 @@ import edu.cnm.deepdive.powerlist.model.dao.GoalDao;
 import edu.cnm.deepdive.powerlist.model.dao.ItemDao;
 import edu.cnm.deepdive.powerlist.model.dao.ListDao;
 import edu.cnm.deepdive.powerlist.model.entity.Goal;
-import edu.cnm.deepdive.powerlist.model.pojo.GoalWithLists;
+import edu.cnm.deepdive.powerlist.model.pojo.GoalWithTaskList;
 import io.reactivex.Completable;
-import io.reactivex.Scheduler;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
 import java.util.List;
@@ -29,7 +28,7 @@ public class GoalRepository {
     itemDao = database.getItemDao();
   }
 
-  public LiveData<List<GoalWithLists>> getAll() {
+  public LiveData<List<GoalWithTaskList>> getAll() {
     return goalDao.selectAll();
   }
 

@@ -16,7 +16,7 @@ import edu.cnm.deepdive.powerlist.model.pojo.ListType;
         onDelete = ForeignKey.SET_NULL
     )
 )
-public class List {
+public class TaskList {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "list_id")
@@ -29,6 +29,9 @@ public class List {
 
     @ColumnInfo(index = true)
     private ListType type;
+
+    public TaskList() {
+    }
 
 
 

@@ -4,12 +4,12 @@
 
 Power List is an app designed for the user wanting to make daily progressions toward their goals. 
 Studies have shown that you become 42% more likely to 
-achieve your goals and visions just by writing them down on a regular basis. Creating a check list 
+achieve your goals and visions just by writing them down on a regular basis. Creating a check taskList 
 with three to five essential tasks to complete every day is what we call a "Power List". Any progress is
  a step in the right direction, and "Power List" will help organize your goals and ideas.
 
-The functionalities of the app include a check list, a file uploader and a media library. 
-A check list is essentially what we call the "power list". The file uploader is used for uploading 
+The functionalities of the app include a check taskList, a file uploader and a media library. 
+A check taskList is essentially what we call the "power taskList". The file uploader is used for uploading 
 photos of whatever it is that you are working towards. These photos will go in your media library which 
 is what displays as your personal vision board.
 
@@ -24,7 +24,7 @@ to get done each daybefore I go to sleep.
 
 Someone who wants to lose 15 lbs by Thanksgiving.
    > As someone who wants to lose some weight by Thanksgiving, I am looking for an app that will 
-keep track of my weight loss goal and document a list of what I need to do to get there.
+keep track of my weight loss goal and document a taskList of what I need to do to get there.
 
 A mother who is planning a birthday party for her son.
    > As a mother who wants to throw her son a fishing birthday party next month, 
@@ -32,7 +32,7 @@ I need to save all of my party ideas in one place, so I am not so overwhelmed an
 
 An interior designer with a collection of ideas.
    > As an interior designer, I have a million and one ideas for the visions my clients have
-for their homes, and I need a check list for my "To-Do's" each day and vision board for each
+for their homes, and I need a check taskList for my "To-Do's" each day and vision board for each
 project I am working on, so I complete my projects on time.
 
 

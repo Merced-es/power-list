@@ -6,7 +6,7 @@ import edu.cnm.deepdive.powerlist.model.dao.GoalDao;
 import edu.cnm.deepdive.powerlist.model.dao.ItemDao;
 import edu.cnm.deepdive.powerlist.model.dao.ListDao;
 import edu.cnm.deepdive.powerlist.model.entity.Item;
-import edu.cnm.deepdive.powerlist.model.pojo.ItemWithLists;
+import edu.cnm.deepdive.powerlist.model.pojo.ItemWithTaskList;
 import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.schedulers.Schedulers;
@@ -28,7 +28,7 @@ public class ItemRepository {
     itemDao = database.getItemDao();
   }
 
-  public LiveData<List<ItemWithLists>> getAll() {
+  public LiveData<List<ItemWithTaskList>> getAll() {
     return itemDao.selectAll();
   }
 

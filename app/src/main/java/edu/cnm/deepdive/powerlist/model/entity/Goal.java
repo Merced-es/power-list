@@ -29,6 +29,9 @@ public class Goal {
   @ColumnInfo(index = true)
   private Date end;
 
+  public Goal() {
+  }
+
   public long getGoalId() {
     return goalId;
   }
