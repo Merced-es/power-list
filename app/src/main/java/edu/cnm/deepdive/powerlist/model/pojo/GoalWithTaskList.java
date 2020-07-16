@@ -7,7 +7,7 @@ import edu.cnm.deepdive.powerlist.model.entity.TaskList;
 
 public class GoalWithTaskList extends Goal {
 
-  @Relation(entity = TaskList.class, entityColumn = "List_id", parentColumn = "item_id")
+  @Relation(entity = TaskList.class, entityColumn = "list_id", parentColumn = "list_id")
   private TaskList taskList;
 
   public TaskList getTaskList() {
