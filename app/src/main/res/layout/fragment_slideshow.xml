@@ -8,7 +8,7 @@
   tools:context=".controller.ui.slideshow.SlideshowFragment">
 
   <TextView
-    android:id="@+id/text_slideshow"
+    android:id="@+id/image_slideshow"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
@@ -22,5 +22,6 @@
     app:layout_constraintTop_toTopOf="parent"/>
   <androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

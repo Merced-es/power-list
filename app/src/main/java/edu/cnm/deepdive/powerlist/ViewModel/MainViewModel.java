@@ -8,6 +8,7 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.OnLifecycleEvent;
+import edu.cnm.deepdive.powerlist.model.entity.Goal;
 import edu.cnm.deepdive.powerlist.model.entity.TaskList;
 import edu.cnm.deepdive.powerlist.model.pojo.GoalWithTaskList;
 import edu.cnm.deepdive.powerlist.model.pojo.TaskListWithItem;
@@ -26,73 +27,37 @@ public class MainViewModel extends AndroidViewModel implements LifecycleObserver
   private final CompositeDisposable pending;
   private final MutableLiveData<GoalWithTaskList> goal;
   private final MutableLiveData<TaskListWithItem> taskList;
+  private final MutableLiveData<List<Goal>> goals;
+  private final MutableLiveData<List<TaskList>> lists;
+  private final MutableLiveData<List<Content>> contents;
 
-  public MainViewModel(@NonNull Application application) {
-    super(application);
-    goalRepository = new GoalRepository(application);
-    taskListRepository = new TaskListRepository(application);
-    itemRepository = new ItemRepository(application);
+
+
+  public MainViewModel() {
     goal = new MutableLiveData<>();
+    lists = new MutableLiveData<>();
+    contents = new MutableLiveData<>();
     throwable = new MutableLiveData<>();
     pending = new CompositeDisposable();
-    taskList = new MutableLiveData<>();
   }
 
   public LiveData<List<GoalWithTaskList>> getGoals() {
     return goalRepository.getAll();
   }
 
-  public LiveData<List<TaskListWithItem>> getTaskList () {
+  public LiveData<List<TaskListWithItem>> getTaskList() {
     return taskListRepository.getAll();
   }
 
 
-  public LiveData<QuoteWithSource> getQuote() {
-    return quote;
+  public LiveData<GoalWithTaskList> getGoal() {
+    return goal;
   }
 
   public LiveData<Throwable> getThrowable() {
     return throwable;
   }
 
-  public void setQuoteId(long id) {
-    throwable.setValue(null);
-    pending.add(
-        quoteRepository.get(id)
-            .subscribe(
-                (quote) -> this.quote.postValue(quote),
-                (throwable) -> this.throwable.postValue(throwable)
-            )
-    );
-  }
 
-  public void saveQuote(Quote quote) {
-    throwable.setValue(null);
-    pending.add(
-        quoteRepository.save(quote)
-            .subscribe(
-                () -> {
-                },
-                (throwable) -> this.throwable.postValue(throwable)
-            )
-    );
-  }
-
-  public void deleteQuote(Quote quote) {
-    throwable.setValue(null);
-    pending.add(
-        quoteRepository.delete(quote)
-            .subscribe(
-                () -> {
-                },
-                (throwable) -> this.throwable.postValue(throwable)
-            )
-    );
-  }
-
-  @OnLifecycleEvent(Event.ON_STOP)
-  private void clearPending() {
-    pending.clear();
-  }
 
 }

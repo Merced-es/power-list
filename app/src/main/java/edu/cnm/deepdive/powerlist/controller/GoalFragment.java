@@ -14,7 +14,7 @@ import edu.cnm.deepdive.powerlist.ViewModel.MainViewModel;
 import edu.cnm.deepdive.powerlist.model.pojo.GoalWithTaskList;
 import edu.cnm.deepdive.powerlist.view.GoalAdapter;
 
-public class GoalsFragment extends Fragment implements GoalAdapter.OnClickListener {
+public class GoalFragment extends Fragment implements GoalAdapter.OnClickListener {
 
   private MainViewModel mainViewModel;
   private RecyclerView goalsList;

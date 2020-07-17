@@ -3,8 +3,6 @@ package edu.cnm.deepdive.powerlist.view;
 import android.content.Context;
 import android.view.View.OnClickListener;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.Adapter;
-import edu.cnm.deepdive.powerlist.controller.GoalsFragment;
 import edu.cnm.deepdive.powerlist.model.pojo.GoalWithTaskList;
 import java.util.List;
 
